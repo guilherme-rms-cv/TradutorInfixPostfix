@@ -7,7 +7,7 @@ public class Parser {
     }
 
     public void parse() {
-        // será implementado depois
+        expr();// será implementado depois
     }
     private char peek() {
         if (current < input.length)
@@ -51,5 +51,9 @@ public class Parser {
     }
     // ε (vazio) é tratado implicitamente: não faz nada se não for + ou -
     }
+
+    // public void parse() {
+    // expr();
+    // }
 }
 
