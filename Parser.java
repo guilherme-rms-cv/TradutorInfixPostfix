@@ -14,5 +14,13 @@ public class Parser {
             return (char) input[current];
         return '\0';
     }
+
+    private void match(char c) {
+    if (c == peek()) {
+        current++;
+    } else {
+        throw new Error("syntax error");
+    }
+}
 }
 
