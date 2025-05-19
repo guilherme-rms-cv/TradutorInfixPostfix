@@ -9,4 +9,10 @@ public class Parser {
     public void parse() {
         // será implementado depois
     }
+    private char peek() {
+        if (current < input.length)
+            return (char) input[current];
+        return '\0';
+    }
 }
+
