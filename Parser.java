@@ -21,6 +21,11 @@ public class Parser {
     } else {
         throw new Error("syntax error");
     }
-}
+    }
+
+    void expr() {
+    digit();
+    oper();
+    }
 }
 
