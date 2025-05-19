@@ -27,5 +27,14 @@ public class Parser {
     digit();
     oper();
     }
+
+    void digit() {
+    if (Character.isDigit(peek())) {
+        System.out.println("push " + peek());
+        match(peek());
+    } else {
+        throw new Error("syntax error");
+    }
+    }
 }
 
