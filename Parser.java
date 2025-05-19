@@ -36,5 +36,20 @@ public class Parser {
         throw new Error("syntax error");
     }
     }
+
+    void oper() {
+    if (peek() == '+') {
+        match('+');
+        digit();
+        System.out.println("add");
+        oper();
+    } else if (peek() == '-') {
+        match('-');
+        digit();
+        System.out.println("sub");
+        oper();
+    }
+    // ε (vazio) é tratado implicitamente: não faz nada se não for + ou -
+    }
 }
 
