@@ -7,7 +7,7 @@ public class Parser {
     }
 
     public void parse() {
-        expr();// será implementado depois
+        expr();
     }
     private char peek() {
         if (current < input.length)
@@ -37,7 +37,7 @@ public class Parser {
     }
     }
 
-    void oper() {
+void oper () {
     if (peek() == '+') {
         match('+');
         digit();
@@ -48,12 +48,18 @@ public class Parser {
         digit();
         System.out.println("sub");
         oper();
+    } else if (peek() == '*') {
+        match('*');
+        digit();
+        System.out.println("mul");
+        oper();
+    } else if (peek() == '/') {
+        match('/');
+        digit();
+        System.out.println("div");
+        oper();
     }
-    // ε (vazio) é tratado implicitamente: não faz nada se não for + ou -
+    // ε (vazio) é tratado implicitamente: não faz nada se não for +, -, *, ou /
     }
-
-    // public void parse() {
-    // expr();
-    // }
 }
 
