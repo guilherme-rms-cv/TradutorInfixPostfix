@@ -14,12 +14,6 @@ public class Parser {
     public void parse() {
         expr();
     }
-    
-    private char peek() {
-        if (current < input.length)
-            return (char) input[current];
-        return '\0';
-    }
 
     private void match(char t) {
     if (currentToken == t) {
