@@ -29,7 +29,18 @@ public class Scanner {
         return new Token(TokenType.NUMBER, n);
     }
 
-    public Token nextToken() {
+    private void skipWhitespace() {
+    char ch = peek();
+    while (ch == ' ' || ch == '\r' || ch == '\t' || ch == '\n') {
+        advance();
+        ch = peek();
+    }
+    }
+
+    public Token nextToken () {
+
+        skipWhitespace();
+
         char ch = peek();
         if (ch == '0') {
             advance();
